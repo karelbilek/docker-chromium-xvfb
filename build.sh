@@ -16,3 +16,12 @@ docker push karel3d/docker-chromium-xvfb:latest
 
 docker tag docker-chromium-xvfb karel3d/docker-chromium-xvfb:$SHORTVERSION
 docker push karel3d/docker-chromium-xvfb:$SHORTVERSION
+
+docker build --build-arg CHROME_VERSION=$SHORTVERSION -t chromium-xvfb-plus-headless -f Dockerfile.combined .
+
+docker tag chromium-xvfb-plus-headless karel3d/chromium-xvfb-plus-headless:latest
+docker push karel3d/chromium-xvfb-plus-headless:latest
+
+docker tag chromium-xvfb-plus-headless karel3d/chromium-xvfb-plus-headless:$SHORTVERSION
+docker push karel3d/chromium-xvfb-plus-headless:$SHORTVERSION
+

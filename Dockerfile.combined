@@ -1,0 +1,7 @@
+ARG CHROME_VERSION
+
+FROM chromedp/headless-shell:${CHROME_VERSION} as headless
+FROM karel3d/docker-chromium-xvfb:${CHROME_VERSION}
+
+COPY --from=headless /headless-shell/ /headless-shell/
+ENV PATH /headless-shell:$PATH
