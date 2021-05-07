@@ -21,4 +21,5 @@ chromium --no-sandbox $@ &
 chromium=$!
 
 wait $chromium
+kill -TERM $xvfb
 wait $xvfb
