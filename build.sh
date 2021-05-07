@@ -14,5 +14,5 @@ SHORTVERSION=`echo $LONGVERSION | sed 's/Chromium \(.*\) built .*/\1/'`
 docker tag docker-chromium-xvfb karel3d/docker-chromium-xvfb:latest
 docker push karel3d/docker-chromium-xvfb:latest
 
-docker tag docker-chromium-xvfb karel3d/$SHORTVERSION:latest
-docker push karel3d/$SHORTVERSION:latest
+docker tag docker-chromium-xvfb karel3d/docker-chromium-xvfb:$SHORTVERSION
+docker push karel3d/docker-chromium-xvfb:$SHORTVERSION
