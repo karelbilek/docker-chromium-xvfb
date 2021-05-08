@@ -1,9 +1,9 @@
 #!/bin/bash
 
 _kill_procs() {
-  kill -TERM $chromium
-  wait $chromium
-  # kill -TERM $xvfb
+	kill -TERM $chromium
+	wait $chromium
+	# kill -TERM $xvfb
 }
 
 # Setup a trap to catch SIGTERM and relay it to child processes
@@ -18,11 +18,10 @@ XVFB_WHD=${XVFB_WHD:-1280x720x16}
 
 Xvfb :99 -ac -screen 0 $XVFB_WHD -nolisten tcp &
 xvfb=$!
-sleep 5
 
 export DISPLAY=:99
 
-chromium --no-sandbox $@ &
+chromium --no-sandbox "$@" &
 chromium=$!
 
 wait $chromium
